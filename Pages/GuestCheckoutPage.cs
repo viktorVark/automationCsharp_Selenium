@@ -2,7 +2,6 @@
 using OpenQA.Selenium;
 using System.Collections.Generic;
 using OpenQA.Selenium.Support.UI;
-using System.Threading;
 
 namespace AutomationFramework.Pages
 {
@@ -73,32 +72,6 @@ namespace AutomationFramework.Pages
             WriteText(emailField, email);
         }
 
-        /// <summary>
-        /// Method used to enter phone number into a "Telephone" field
-        /// </summary>
-        /// <param name="telephoneNumber">Telephone number</param>
-        private void EnterTelephoneNumber(string telephoneNumber)
-        {
-            WriteText(telephoneField, telephoneNumber);
-        }
-
-        /// <summary>
-        /// Method used to enter fax number into a "Fax" field
-        /// </summary>
-        /// <param name="fax">Fax</param>
-        private void EnterFaxNumber(string fax)
-        {
-            WriteText(faxField, fax);
-        }
-
-        /// <summary>
-        /// Method used to enter company name into a "Company" field
-        /// </summary>
-        /// <param name="companyName">Company name</param>
-        private void EnterCompanyName(string companyName)
-        {
-            WriteText(companyField, companyName);
-        }
 
         /// <summary>
         /// Method used to enter first address into a "Address 1" field
@@ -107,15 +80,6 @@ namespace AutomationFramework.Pages
         private void EnterFirstAddress(string firstAddress)
         {
             WriteText(addres1Field, firstAddress);
-        }
-
-        /// <summary>
-        /// Method used to enter second address into a "Address 2" field
-        /// </summary>
-        /// <param name="firstAddress">Second address</param>
-        private void EnterSecondAddress(string secondAddress)
-        {
-            WriteText(address2Field, secondAddress);
         }
 
         /// <summary>

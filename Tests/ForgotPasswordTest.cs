@@ -23,8 +23,9 @@ namespace AutomationFramework.Tests
                 TestData.TestData.RegisterUserTestData.city,
                 TestData.TestData.RegisterUserTestData.zipCode,
                 userName,
-                TestData.TestData.RegisterUserTestData.password
-                , true);
+                TestData.TestData.RegisterUserTestData.password,
+                true
+                );
 
             // Click on "Logoff" button
             Pages.HomePage.LogOffUser();

@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+
 namespace AutomationFramework.Tests
 {
     public class PurchaseItemEuroTest : BaseTest

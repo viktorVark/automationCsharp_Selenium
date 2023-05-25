@@ -38,8 +38,6 @@ namespace AutomationFramework.Pages
         By stateDropdown = By.Id("AccountFrm_zone_id");
         By stateDropdownOptions = By.XPath("//select[@id='AccountFrm_zone_id']/option");
         By zipCodeField = By.Id("AccountFrm_postcode");
-        By countryDropdown = By.Id("AccountFrm_country_id");
-        By countryDropdownOptions = By.XPath("//select[@id='AccountFrm_country_id']/option");
         By loginNameField = By.Id("AccountFrm_loginname");
         By passwordField = By.Id("AccountFrm_password");
         By passwordConfirmField = By.Id("AccountFrm_confirm");
