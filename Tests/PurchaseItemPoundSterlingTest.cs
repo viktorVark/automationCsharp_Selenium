@@ -1,11 +1,5 @@
 ﻿using AutomationFramework.Utils;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace AutomationFramework.Tests
 {
@@ -45,8 +39,6 @@ namespace AutomationFramework.Tests
 
             // Click on confirm order
             Pages.GuestCheckoutPage.ClickOnConfirmOrderButton();
-
-            Thread.Sleep(2000);
 
             // Test assert
             Assert.IsTrue(Pages.PurchaseItemPage.isSuccessMessageVisible());

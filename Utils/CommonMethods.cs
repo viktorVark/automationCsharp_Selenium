@@ -9,6 +9,7 @@ namespace AutomationFramework.Utils
 {
     public class CommonMethods
     {
+        static public WebDriverWait wait;
         /// <summary>
         /// Method used to click on an element
         /// </summary>
@@ -132,6 +133,7 @@ namespace AutomationFramework.Utils
         public static List<string> GetAllOptionsFromSelect(IWebDriver driver, By element)
         {
             List<string> optionsList = new List<string>();
+            
 
             try
             {

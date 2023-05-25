@@ -1,11 +1,6 @@
 ﻿using AutomationFramework.Utils;
 using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace AutomationFramework.Pages
 {
@@ -40,6 +35,7 @@ namespace AutomationFramework.Pages
         By totalPrice = By.XPath("//*[@id='cart']/div/div[1]/table/tbody/tr[2]/td[6]");
         By quantity = By.XPath("//*[@id='cart_quantity72']");
         By cartUpdate = By.Id("cart_update");
+        By tableP = By.XPath("//div[@class='contentpanel' and contains(., 'Your shopping cart is empty!')]");
 
         /// <summary>
         /// Method used to click on product link
@@ -79,6 +75,7 @@ namespace AutomationFramework.Pages
         /// </summary>
         private void ClickOnRemoveItemLink()
         {
+            WaitElementToBeClickable(removeItemFromCartLink);
             ClickElement(removeItemFromCartLink);
         }
 
@@ -88,9 +85,11 @@ namespace AutomationFramework.Pages
         /// <returns></returns>
         public bool IsShoppingCartEmptyMessage()
         {
+            WaitElementVisibility(tableP);
+
             bool isDisplayed = false;
 
-            IWebElement tableDiv = driver.FindElement(By.XPath("//div[@class='contentpanel' and contains(., 'Your shopping cart is empty!')]"));
+            IWebElement tableDiv = driver.FindElement(tableP);
 
             if(tableDiv.Displayed)
             {
@@ -184,6 +183,7 @@ namespace AutomationFramework.Pages
         /// </summary>
         public void RemoveItemFromCart()
         {
+            
             ClickOnRemoveItemLink();
         }
 

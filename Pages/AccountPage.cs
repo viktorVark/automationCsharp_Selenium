@@ -1,13 +1,8 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationFramework.Pages
 {
-	public class AccountPage : BasePage
+    public class AccountPage : BasePage
 	{
 		/// <summary>
 		/// Default constructor

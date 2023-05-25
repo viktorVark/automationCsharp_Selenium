@@ -1,11 +1,4 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace AutomationFramework.Tests
 {
     public class PurchaseItemEuroTest : BaseTest
@@ -32,12 +25,8 @@ namespace AutomationFramework.Tests
             // Click on drop down list and select euro as payment
             Pages.PurchaseItemPage.ClickOnDropDownPaymentEuro();
 
-            Thread.Sleep(2500);
-
             // Click on confirm order button
             Pages.PurchaseItemPage.ClickOnConfirmOrderButton();
-
-            Thread.Sleep(2000);
 
             // Test assert
             Assert.IsTrue(Pages.PurchaseItemPage.isSuccessMessageVisible());
