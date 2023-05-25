@@ -1,15 +1,9 @@
-﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
+﻿using OpenQA.Selenium;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationFramework.Pages
 {
-	public class OrderHistoryPage : BasePage
+    public class OrderHistoryPage : BasePage
 	{
 		/// <summary>
 		/// Default constructor

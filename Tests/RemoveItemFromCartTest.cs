@@ -1,11 +1,5 @@
 ﻿using AutomationFramework.Utils;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace AutomationFramework.Tests
 {
@@ -25,8 +19,6 @@ namespace AutomationFramework.Tests
 
             // Add item to cart
             Pages.AddItemToCartPage.AddItemToCart();
-
-            Thread.Sleep(2000);
         }
 
         [Test]
@@ -34,8 +26,6 @@ namespace AutomationFramework.Tests
         {
             // Remove item from cart
             Pages.AddItemToCartPage.RemoveItemFromCart();
-
-            Thread.Sleep(2000);
 
             // Test assert
             Assert.IsTrue(Pages.AddItemToCartPage.IsShoppingCartEmptyMessage());          

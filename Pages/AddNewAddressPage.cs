@@ -1,11 +1,27 @@
 ﻿using AutomationFramework.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+	public class AddNewAddressPage : BasePage
+using System.Threading;
+using System.Threading.Tasks;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AutomationFramework.Pages
 {
-	public class AddNewAddressPage : BasePage
+    public class AddNewAddressPage : BasePage
 	{
 		/// <summary>
 		/// Default constructor
@@ -20,16 +36,16 @@ namespace AutomationFramework.Pages
 		/// </summary>
 		/// <param name="webDriver">webDriver</param>
 		public AddNewAddressPage(IWebDriver webDriver)
-		{
-			driver = webDriver;
-		}
-
-		//Locators
-		By newAddressButton = By.XPath("//a[@title = 'New Address']");
 		By firstNameField = By.Id("AddressFrm_firstname");
 		By lastNameField = By.Id("AddressFrm_lastname");
 		By companyField = By.Id("AddressFrm_company");
 		By addres1Field = By.Id("AddressFrm_address_1");
+		By cityField = By.Id("AddressFrm_city");
+		By stateDropdown = By.Id("AddressFrm_zone_id");
+		By stateDropdownOptions = By.XPath("//select[@id='AddressFrm_zone_id']/option");
+		By zipCodeField = By.Id("AddressFrm_postcode");
+		By countryDropdown = By.Id("AddressFrm_country_id");
+		By countryDropdownOptions = By.XPath("//select[@id='AddressFrm_country_id']/option");
 		By cityField = By.Id("AddressFrm_city");
 		By stateDropdown = By.Id("AddressFrm_zone_id");
 		By stateDropdownOptions = By.XPath("//select[@id='AddressFrm_zone_id']/option");

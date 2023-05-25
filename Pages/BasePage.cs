@@ -23,6 +23,16 @@ namespace AutomationFramework.Pages
         }
 
         /// <summary>
+        /// Method used to check if element is clickable
+        /// </summary>
+        /// <param name="elementBy"></param>
+        public void WaitElementToBeClickable(By elementBy)
+        {
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            wait.Until(ExpectedConditions.ElementToBeClickable(elementBy));
+        }
+
+        /// <summary>
         /// Method used to click on an element
         /// </summary>
         public void ClickElement(By element)

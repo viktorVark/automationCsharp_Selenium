@@ -1,11 +1,6 @@
 ﻿using AutomationFramework.Utils;
 using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
 
@@ -137,7 +132,7 @@ namespace AutomationFramework.Pages
         /// to initialize a C# select object and to select a random state from aforementioned list
         /// </summary>
         private void SelectState()
-        {
+        {  
             List<string> stateList = CommonMethods.GetAllOptionsFromSelect(driver, stateDropdownOptions);
             SelectElement select = new SelectElement(driver.FindElement(stateDropdown));
             select.SelectByText(CommonMethods.GetRandomItemFromList(stateList));
@@ -158,10 +153,9 @@ namespace AutomationFramework.Pages
         /// </summary>
         private void SelectCountry()
         {
-            
+            WaitElementVisibility(countryDropdownOptions);
             List<string> countryList = CommonMethods.GetAllOptionsFromSelect(driver, countryDropdownOptions);
-
-
+            WaitElementVisibility(countryDropdown);
             SelectElement select = new SelectElement(driver.FindElement(countryDropdown));
             select.SelectByText(CommonMethods.GetRandomItemFromList(countryList));
         }
@@ -179,6 +173,7 @@ namespace AutomationFramework.Pages
         /// </summary>
         public void ClickOnConfirmOrderButton()
         {
+            WaitElementToBeClickable(confirmOrder);
             ClickElement(confirmOrder);
         }
 

@@ -1,10 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace AutomationFramework.Pages
 {
@@ -34,12 +28,14 @@ namespace AutomationFramework.Pages
         By poundSterling = By.XPath("//a[@href='https://automationteststore.com/index.php?rt=account/login&currency=GBP']");
         By orderIdMessage = By.XPath("//div[@class='contentpanel']//p[2]");
         By accountLink = By.XPath("//ul[@class='info_links_footer']//li[contains(.,'Account')]");
+        By tableP = By.XPath("//p[contains(., 'You can view your order details by')]");
 
         /// <summary>
         /// Method used to click on "Confirm Order" button
         /// </summary>
         public void ClickOnConfirmOrderButton()
         {
+            WaitElementToBeClickable(confirmOrderButton);
             ClickElement(confirmOrderButton);
         }
 
@@ -49,10 +45,12 @@ namespace AutomationFramework.Pages
         /// <returns></returns>
         public bool isSuccessMessageVisible()
         {
+            WaitElementVisibility(tableP);
+
             bool isDisplayed = false;
 
-            IWebElement tableDiv = driver.FindElement(By.XPath("//p[contains(., 'You can view your order details by')]"));
-
+            IWebElement tableDiv = driver.FindElement(tableP);
+            
             if (tableDiv.Displayed)
             {
                 isDisplayed = true;
@@ -86,9 +84,11 @@ namespace AutomationFramework.Pages
         /// </summary>
         public void ClickOnDropDownPaymentEuro()
         {
+            WaitElementToBeClickable(dropDownPayment);
             ClickElement(dropDownPayment);
+            WaitElementToBeClickable(euroLink);
             ClickElement(euroLink);
-            Thread.Sleep(3000);
+            
         }
 
         /// <summary>
@@ -96,7 +96,9 @@ namespace AutomationFramework.Pages
         /// </summary>
         public void ClickOnDropDownPaymentPountSterling()
         {
+            WaitElementToBeClickable(dropDownPayment);
             ClickElement(dropDownPayment);
+            WaitElementToBeClickable(poundSterling);
             ClickElement(poundSterling);
         }
 

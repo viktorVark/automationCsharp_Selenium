@@ -30,12 +30,8 @@ namespace AutomationFramework.Tests
             // Click on checkout link
             Pages.AddItemToCartPage.ClickOnCheckoutLink();
 
-            Thread.Sleep(2500);
-
             // Click on confirm order button
             Pages.PurchaseItemPage.ClickOnConfirmOrderButton();
-
-            Thread.Sleep(2000);
 
             // Test assert
             Assert.IsTrue(Pages.PurchaseItemPage.isSuccessMessageVisible());

@@ -1,16 +1,10 @@
 ﻿using AutomationFramework.Utils;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace AutomationFramework.Pages
 {
-	public class AddToWishListPage : BasePage
+    public class AddToWishListPage : BasePage
 	{
 		/// <summary>
 		/// Default constructor
