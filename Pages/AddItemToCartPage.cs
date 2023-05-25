@@ -28,13 +28,12 @@ namespace AutomationFramework.Pages
             driver = webDriver;
         }
 
-        //By cartPage = By.XPath("//ul[@id='main_menu_top']/li[@data-id='menu_cart']");
+        //Locators
         By productLink = By.XPath("//div[@class='fixed']/a[@title='Brunette expressions Conditioner']");
         By cartLink = By.XPath("//*[@id='main_menu_top']/li[3]/a/span");
         By addToCartLink = By.XPath("//*[@id='product']/fieldset/div[4]/ul/li/a");
         By firstIteminCartName = By.XPath("//td[@class='align_left']/a");
         By removeItemFromCartLink = By.XPath("//td[@class='align_center']/a[@href='https://automationteststore.com/index.php?rt=checkout/cart&remove=72']");
-        //By emptyCartMessage = By.XPath("//div[@class='contentpanel' and contains(., 'Your shopping cart is empty!')]");
         By checkoutLink = By.Id("cart_checkout1");
         By unitPrice = By.XPath("//*[@id='cart']/div/div[1]/table/tbody/tr[2]/td[4]");
         By totalPrice = By.XPath("//*[@id='cart']/div/div[1]/table/tbody/tr[2]/td[6]");
@@ -106,6 +105,7 @@ namespace AutomationFramework.Pages
         /// <returns></returns>
         private string GetUnitPriceText()
         {
+            WaitElementVisibility(unitPrice);
             return CommonMethods.ReadTextFromElement(driver, unitPrice);
         }
 
@@ -115,6 +115,7 @@ namespace AutomationFramework.Pages
         /// <returns></returns>
         private string GetQuantityText()
         {
+            WaitElementVisibility(By.Id("cart_quantity72"));
             IWebElement el = driver.FindElement(By.Id("cart_quantity72"));
 
             string quant = el.GetAttribute("value");
@@ -138,6 +139,7 @@ namespace AutomationFramework.Pages
         /// </summary>
         public void EnterNewQuantity()
         {
+            WaitElementVisibility(By.Id("cart_quantity72"));
             IWebElement clearInput = driver.FindElement(By.Id("cart_quantity72"));
 
             clearInput.Clear();
@@ -159,6 +161,7 @@ namespace AutomationFramework.Pages
         /// <returns></returns>
         private string GetTotalText()
         {
+            WaitElementVisibility(totalPrice);
             return CommonMethods.ReadTextFromElement(driver, totalPrice);
         }
 

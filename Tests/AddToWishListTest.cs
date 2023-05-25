@@ -34,7 +34,7 @@ namespace AutomationFramework.Tests
 			Pages.AccountPage.ClickOnMyWishList();
 
 			//Assert
-			Thread.Sleep(1000);
+			
 			Assert.AreEqual(TestData.TestData.AddToWishList.productName, Pages.AddToWishListPage.GetLastAddedFromWishList());
 		}
 	}

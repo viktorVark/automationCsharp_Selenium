@@ -67,7 +67,7 @@ namespace AutomationFramework.Pages
         /// <returns></returns>
         public string ReadOrderId()
         {
-			
+            WaitElementVisibility(orderIdMessage);
 			string[] message = driver.FindElement(orderIdMessage).Text.Split(' ');
             return message[2];
         }

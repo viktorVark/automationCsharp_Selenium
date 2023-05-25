@@ -158,7 +158,10 @@ namespace AutomationFramework.Pages
         /// </summary>
         private void SelectCountry()
         {
+            
             List<string> countryList = CommonMethods.GetAllOptionsFromSelect(driver, countryDropdownOptions);
+
+
             SelectElement select = new SelectElement(driver.FindElement(countryDropdown));
             select.SelectByText(CommonMethods.GetRandomItemFromList(countryList));
         }
