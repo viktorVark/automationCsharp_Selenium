@@ -159,17 +159,6 @@ namespace AutomationFramework.Pages
         }
 
         /// <summary>
-        /// Method used to get all of the countries from a select element,
-        /// to initialize a C# select object and to select a random country from aforementioned list
-        /// </summary>
-        private void SelectCountry()
-        {
-            List<string> countryList = CommonMethods.GetAllOptionsFromSelect(driver, countryDropdownOptions);
-            SelectElement select = new SelectElement(driver.FindElement(countryDropdown));
-            select.SelectByText(CommonMethods.GetRandomItemFromList(countryList));
-        }
-
-        /// <summary>
         /// Method used to enter login name into a "Login name" field
         /// </summary>
         /// <param name="loginName">Login name</param>

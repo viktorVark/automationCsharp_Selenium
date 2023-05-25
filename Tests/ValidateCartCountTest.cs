@@ -45,8 +45,6 @@ namespace AutomationFramework.Tests
             // Update cart
             Pages.AddItemToCartPage.ClickOnCartUpdate();
 
-            Thread.Sleep(2000);
-
             // Decrement counter
             --TestData.TestData.CartCounter.cartCounter;
 

@@ -16,12 +16,6 @@ namespace AutomationFramework.Tests
 			// Log in
 			Pages.LogInPage.LoginUser(TestData.TestData.LogOffTestData.userName, TestData.TestData.LogOffTestData.password);
 
-			// Return to home page
-			Pages.HomePage.ClickOnLogoLink();
-
-			//Goes to account page
-			Pages.PurchaseItemPage.ClickOnAccountLink();
-
 			// Goes to manage address book
 			Pages.AccountPage.ClickOnManageAddressBook();
 		}
@@ -29,8 +23,8 @@ namespace AutomationFramework.Tests
 		[Test]
 		public void AddNewAddressToBook()
 		{
-			Pages.AccountPage.ClickOnManageAddressBook();
 			Pages.AddNewAddressPage.CLickOnNewAddressButton();
+
 			Pages.AddNewAddressPage.EnterAllFieldsForAddress(
 				TestData.TestData.RegisterUserTestData.firstName,
 				TestData.TestData.RegisterUserTestData.lastName,

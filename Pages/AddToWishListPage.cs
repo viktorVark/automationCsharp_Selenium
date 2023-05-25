@@ -49,7 +49,7 @@ namespace AutomationFramework.Pages
 			else
 			{
 				ClickElement(removeFromWishListLink);
-				Thread.Sleep(1000);
+				
 				ClickElement(addToWishListLink);
 			}
 		}
@@ -60,6 +60,7 @@ namespace AutomationFramework.Pages
 		/// <returns></returns>
 		public string GetLastAddedFromWishList()
 		{
+			WaitElementVisibility(lastAddedRowText);
 			return CommonMethods.ReadTextFromElement(driver, lastAddedRowText);
 		}
 

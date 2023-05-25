@@ -16,7 +16,7 @@
                                 contactUsSuccessMessage = "Your enquiry has been successfully sent to the store owner!",
                                 addToCartFirstItemName = "Brunette expressions Conditioner",
                                 searchSuccessMessage = "YOUR HAIR",
-                                addNewAddresSuccessMessage = "\r\nYour address has been successfully inserted";
+                                addNewAddresSuccessMessage = "×\r\nYour address has been successfully inserted";
         }
     }
 }

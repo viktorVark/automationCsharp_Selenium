@@ -141,7 +141,10 @@ namespace AutomationFramework.Utils
 
                 foreach (IWebElement option in options)
                 {
-                    optionsList.Add(option.Text);
+                    if (!option.Text.Contains("--- Please Select ---"))
+                    {
+                        optionsList.Add(option.Text);
+                    }
                 }
             }
             catch (Exception)

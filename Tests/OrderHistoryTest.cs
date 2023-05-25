@@ -20,8 +20,6 @@ namespace AutomationFramework.Tests
 			// Click on checkout link
 			Pages.AddItemToCartPage.ClickOnCheckoutLink();
 
-			Thread.Sleep(2500);
-
 			// Click on confirm order button
 			Pages.PurchaseItemPage.ClickOnConfirmOrderButton();
 		}
@@ -30,7 +28,6 @@ namespace AutomationFramework.Tests
 		public void OrderHistory()
 		{
 			//cita order id
-			Thread.Sleep(2000);
 			string orderId = Pages.PurchaseItemPage.ReadOrderId();
 
 			//ide na account page
