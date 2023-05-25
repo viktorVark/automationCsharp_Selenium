@@ -54,7 +54,7 @@ namespace AutomationFramework.Pages
 		By countryDropdownOptions = By.XPath("//select[@id='AddressFrm_country_id']/option");
 		By continueButton = By.XPath("//button[@title='Continue' and @type='submit']");
 		By successAlert = By.XPath("//div[@class='alert alert-success']");
-
+		
 
 		/// <summary>
 		/// Method used to enter first name into a "First Name" field

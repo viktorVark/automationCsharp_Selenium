@@ -132,8 +132,11 @@ namespace AutomationFramework.Pages
         /// to initialize a C# select object and to select a random state from aforementioned list
         /// </summary>
         private void SelectState()
-        {  
+        {
+            WaitElementVisibility(stateDropdownOptions);
             List<string> stateList = CommonMethods.GetAllOptionsFromSelect(driver, stateDropdownOptions);
+
+            WaitElementVisibility(stateDropdown);
             SelectElement select = new SelectElement(driver.FindElement(stateDropdown));
             select.SelectByText(CommonMethods.GetRandomItemFromList(stateList));
         }
@@ -155,6 +158,7 @@ namespace AutomationFramework.Pages
         {
             WaitElementVisibility(countryDropdownOptions);
             List<string> countryList = CommonMethods.GetAllOptionsFromSelect(driver, countryDropdownOptions);
+
             WaitElementVisibility(countryDropdown);
             SelectElement select = new SelectElement(driver.FindElement(countryDropdown));
             select.SelectByText(CommonMethods.GetRandomItemFromList(countryList));
@@ -202,7 +206,7 @@ namespace AutomationFramework.Pages
             EnterCity(city);
            
             SelectCountry();
-            Thread.Sleep(1000);
+            
             SelectState();
 
             ClickOnContinue();

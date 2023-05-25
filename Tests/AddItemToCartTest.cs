@@ -26,8 +26,6 @@ namespace AutomationFramework.Tests
             // Add item to cart
             Pages.AddItemToCartPage.AddItemToCart();
 
-            Thread.Sleep(2000);
-
             // Assert test
             Assert.AreEqual(AppConstants.Constants.GenericMessages.addToCartFirstItemName, Pages.AddItemToCartPage.GetFirstCartTableItemName());
         }

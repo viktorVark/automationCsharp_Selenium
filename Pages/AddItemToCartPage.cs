@@ -41,6 +41,7 @@ namespace AutomationFramework.Pages
         /// </summary>
         private void ClickOnProductLink()
         {
+            
             ClickElement(productLink);
         }
 
