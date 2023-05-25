@@ -16,7 +16,7 @@ namespace AutomationFramework.Pages
         /// <summary>
         /// Method used to check visibility of an element
         /// </summary>
-        private void WaitElementVisibility(By elementBy)
+        public void WaitElementVisibility(By elementBy)
         {
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(elementBy));

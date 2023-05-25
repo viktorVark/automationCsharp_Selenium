@@ -1,12 +1,7 @@
 ﻿using AutomationFramework.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace AutomationFramework.Pages
 {
@@ -31,16 +26,16 @@ namespace AutomationFramework.Pages
 
 		//Locators
 		By newAddressButton = By.XPath("//a[@title = 'New Address']");
-		By firstNameField = By.Id("guestFrm_firstname");
-		By lastNameField = By.Id("guestFrm_lastname");
-		By companyField = By.Id("guestFrm_company");
-		By addres1Field = By.Id("guestFrm_address_1");
-		By cityField = By.Id("guestFrm_city");
-		By stateDropdown = By.Id("guestFrm_zone_id");
-		By stateDropdownOptions = By.XPath("//select[@id='guestFrm_zone_id']/option");
-		By zipCodeField = By.Id("guestFrm_postcode");
-		By countryDropdown = By.Id("guestFrm_country_id");
-		By countryDropdownOptions = By.XPath("//select[@id='guestFrm_country_id']/option");
+		By firstNameField = By.Id("AddressFrm_firstname");
+		By lastNameField = By.Id("AddressFrm_lastname");
+		By companyField = By.Id("AddressFrm_company");
+		By addres1Field = By.Id("AddressFrm_address_1");
+		By cityField = By.Id("AddressFrm_city");
+		By stateDropdown = By.Id("AddressFrm_zone_id");
+		By stateDropdownOptions = By.XPath("//select[@id='AddressFrm_zone_id']/option");
+		By zipCodeField = By.Id("AddressFrm_postcode");
+		By countryDropdown = By.Id("AddressFrm_country_id");
+		By countryDropdownOptions = By.XPath("//select[@id='AddressFrm_country_id']/option");
 		By continueButton = By.XPath("//button[@title='Continue' and @type='submit']");
 		By successAlert = By.XPath("//div[@class='alert alert-success']");
 
@@ -96,7 +91,10 @@ namespace AutomationFramework.Pages
 		/// </summary>
 		private void SelectState()
 		{
+			WaitElementVisibility(stateDropdownOptions);
 			List<string> stateList = CommonMethods.GetAllOptionsFromSelect(driver, stateDropdownOptions);
+
+			WaitElementVisibility(stateDropdown);
 			SelectElement select = new SelectElement(driver.FindElement(stateDropdown));
 			select.SelectByText(CommonMethods.GetRandomItemFromList(stateList));
 		}
@@ -116,7 +114,10 @@ namespace AutomationFramework.Pages
 		/// </summary>
 		private void SelectCountry()
 		{
+			WaitElementVisibility(countryDropdownOptions);
 			List<string> countryList = CommonMethods.GetAllOptionsFromSelect(driver, countryDropdownOptions);
+
+			WaitElementVisibility(countryDropdown);
 			SelectElement select = new SelectElement(driver.FindElement(countryDropdown));
 			select.SelectByText(CommonMethods.GetRandomItemFromList(countryList));
 		}
@@ -168,7 +169,7 @@ namespace AutomationFramework.Pages
 			EnterCity(city);
 
 			SelectCountry();
-			Thread.Sleep(1000);
+			
 			SelectState();
 
 			ClickOnContinue();

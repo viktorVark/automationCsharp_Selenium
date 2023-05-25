@@ -36,6 +36,7 @@ namespace AutomationFramework.Pages
         /// </summary>
         public void ClickOnLoginRegisterButton()
         {
+            WaitElementVisibility(loginRegisterButton);
             CommonMethods.ClickOnElement(driver, loginRegisterButton);
         }
 

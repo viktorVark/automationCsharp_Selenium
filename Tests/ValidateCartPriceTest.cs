@@ -26,15 +26,11 @@ namespace AutomationFramework.Tests
             // Add item to cart
             Pages.AddItemToCartPage.AddItemToCart();
 
-            Thread.Sleep(2000);
-
             // Return to home page
             Pages.HomePage.ClickOnLogoLink();
 
             // Add item to cart
             Pages.AddItemToCartPage.AddItemToCart();
-
-            Thread.Sleep(2000);
 
             // Test assert
             Assert.IsTrue(Pages.AddItemToCartPage.IsPriceDoubled());
@@ -42,12 +38,8 @@ namespace AutomationFramework.Tests
             // Return quantity to one
             Pages.AddItemToCartPage.EnterNewQuantity();
 
-            Thread.Sleep(2000);
-
             // Update cart
             Pages.AddItemToCartPage.ClickOnCartUpdate();
-
-            Thread.Sleep(2000);
 
             // Test assert
             Assert.IsTrue(Pages.AddItemToCartPage.IsPriceTheSame());
